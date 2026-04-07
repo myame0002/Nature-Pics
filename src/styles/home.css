@@ -1,0 +1,214 @@
+.hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 20px;
+  padding: 28px;
+  border-radius: 34px;
+  border: 1px solid var(--line-strong);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(139, 176, 108, 0.22), transparent 24%),
+    radial-gradient(circle at 85% 10%, rgba(243, 192, 94, 0.3), transparent 26%),
+    linear-gradient(135deg, rgba(255, 250, 240, 0.98), rgba(245, 240, 230, 0.9));
+  box-shadow: var(--panel-shadow);
+}
+
+.home-hero {
+  align-items: center;
+}
+
+.home-visual {
+  display: grid;
+  place-items: center;
+}
+
+.home-visual-stack {
+  position: relative;
+  width: min(100%, 420px);
+  min-height: 320px;
+}
+
+.visual-tile {
+  position: absolute;
+  width: 58%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 22px 40px rgba(76, 64, 40, 0.18);
+}
+
+.visual-tile.is-placeholder {
+  background:
+    radial-gradient(circle at top, rgba(131, 154, 79, 0.36), transparent 32%),
+    linear-gradient(180deg, rgba(239, 234, 222, 1), rgba(225, 232, 214, 1));
+}
+
+.visual-1 {
+  top: 0;
+  left: 2%;
+  z-index: 3;
+}
+
+.visual-2 {
+  top: 18%;
+  right: 0;
+  z-index: 2;
+}
+
+.visual-3 {
+  bottom: 0;
+  left: 20%;
+  z-index: 1;
+}
+
+.home-feature-grid,
+.feature-card-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.home-feature-grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+}
+
+.home-feature-panel,
+.stats-panel,
+.recent-panel,
+.feature-card {
+  padding: 24px;
+}
+
+.quick-link-grid,
+.stats-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.quick-link-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.quick-link-card {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  text-align: left;
+  cursor: pointer;
+}
+
+.quick-link-card strong,
+.feature-card h3,
+.recent-observation-body h3,
+.stat-chip strong {
+  color: var(--text-strong);
+}
+
+.quick-link-card span,
+.feature-card p,
+.recent-observation-body p,
+.stat-chip span {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stat-chip,
+.stats-card div {
+  display: grid;
+  gap: 4px;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(73, 91, 48, 0.08);
+}
+
+.stat-chip strong,
+.stats-card strong {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1;
+}
+
+.stats-card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-content: center;
+}
+
+.feature-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-card {
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.84), rgba(247, 242, 232, 0.92)),
+    var(--panel);
+}
+
+.recent-observation {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.recent-observation img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 26px;
+}
+
+.recent-observation-body {
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.hero-copy {
+  text-align: left;
+}
+
+.hero-metrics {
+  display: grid;
+  gap: 12px;
+  align-content: center;
+}
+
+.hero-metrics div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(73, 91, 48, 0.08);
+}
+
+.hero-metrics div.is-active {
+  background: linear-gradient(135deg, rgba(236, 244, 221, 0.92), rgba(255, 255, 255, 0.94));
+  border-color: rgba(95, 124, 72, 0.24);
+}
+
+.hero-metrics strong {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fffef8;
+  font-size: 1rem;
+}
+
+.hero-metrics span {
+  color: var(--text-strong);
+  font-weight: 600;
+}

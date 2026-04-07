@@ -1,0 +1,67 @@
+/* Guide Detail View & Navigation Styles */
+
+.guide-detail-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.back-button {
+  width: fit-content;
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.back-button:hover {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--text-strong);
+  border-color: var(--text-muted);
+}
+
+.nav-arrow-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 200ms ease;
+  flex-shrink: 0;
+}
+
+.nav-arrow-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 1);
+  color: var(--text-strong);
+  border-color: var(--accent);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-arrow-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.detail-scroll-area {
+  display: grid;
+  gap: 24px;
+}
+
+.field-guide-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  gap: 18px;
+}

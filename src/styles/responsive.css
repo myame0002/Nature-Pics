@@ -1,0 +1,233 @@
+@media (max-width: 1040px) {
+  .app-shell {
+    padding: 20px;
+  }
+
+  .hero-panel,
+  .page-hero,
+  .home-feature-grid,
+  .feature-card-grid,
+  .workspace-grid,
+  .result-toolbar,
+  .analysis-header,
+  .field-guide-grid,
+  .guide-editor-header,
+  .recent-observation,
+  .stats-grid,
+  .stats-card {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    gap: 12px;
+    padding: 12px 16px 14px;
+    margin-top: -20px;
+  }
+
+  .topbar-hidden {
+    transform: translateY(calc(-100% - 20px));
+  }
+
+  .topbar-peek {
+    transform: translateY(14px);
+  }
+
+  .topbar-home.topbar-resting {
+    transform: translateY(16px);
+  }
+
+  .topbar-home.topbar-resting::before,
+  .topbar-home.topbar-resting::after {
+    top: -20px;
+    height: 20px;
+  }
+
+  .topbar-nav {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .nav-button {
+    padding: 9px 12px;
+  }
+
+  .topbar-brand strong {
+    font-size: 0.92rem;
+  }
+
+  .topbar-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
+  }
+
+  .quick-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-page {
+    max-width: 100%;
+  }
+
+  /* Guide Book Mobile Adjustments */
+  .guide-book-container {
+    padding: 20px 10px;
+  }
+
+  .guide-book-page {
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .guide-book-page::before {
+    width: 20px;
+  }
+
+  .guide-tabs {
+    padding-left: 10px;
+    flex-wrap: wrap;
+  }
+
+  .guide-tab {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .guide-book-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    gap: 18px;
+    padding: 14px;
+  }
+
+  .hero-panel,
+  .page-hero,
+  .panel-soft,
+  .uploader-panel,
+  .analysis-panel,
+  .home-feature-panel,
+  .stats-panel,
+  .recent-panel,
+  .feature-card {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    gap: 8px;
+    padding: 10px 12px 12px;
+    margin-top: -14px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .topbar-hidden {
+    transform: translateY(calc(-100% - 14px));
+  }
+
+  .topbar-peek {
+    transform: translateY(10px);
+  }
+
+  .topbar-home.topbar-resting {
+    transform: translateY(12px);
+  }
+
+  .topbar::before,
+  .topbar::after {
+    top: -12px;
+    height: 12px;
+  }
+
+  .topbar-home.topbar-resting::before,
+  .topbar-home.topbar-resting::after {
+    top: -16px;
+    height: 16px;
+  }
+
+  .analysis-inline-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .analysis-inline-actions .toolbar-actions {
+    justify-content: flex-start;
+  }
+
+  .topbar-peek::before,
+  .topbar-peek::after {
+    top: -18px;
+    height: 18px;
+  }
+
+  .topbar-brand strong {
+    display: none;
+  }
+
+  .topbar-brand {
+    gap: 8px;
+  }
+
+  .topbar-brand .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .topbar-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .topbar .language-switch span {
+    display: none;
+  }
+
+  .topbar .language-knob {
+    padding: 4px;
+  }
+
+  .language-option {
+    padding: 7px 10px;
+    font-size: 0.9rem;
+  }
+
+  .nav-button {
+    padding: 8px 10px;
+    font-size: 0.92rem;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .category-grid-simple {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+
+  .guide-card {
+    grid-template-columns: 84px minmax(0, 1fr);
+  }
+
+  .context-note {
+    flex-direction: column;
+  }
+
+  .toolbar-actions {
+    justify-content: flex-start;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .visual-tile {
+    width: 62%;
+  }
+}

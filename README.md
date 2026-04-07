@@ -1,73 +1,22 @@
-# React + TypeScript + Vite
+# Nature Pics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+自然の写真をアップロードし、解析対象カテゴリを先に絞ったうえで iNaturalist の Computer Vision API から候補を返す試作です。
 
-Currently, two official plugins are available:
+## 開発手順
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. `.env.example` を参考に `.env.local` を作成する
+2. `INATURALIST_API_TOKEN` に有効な iNaturalist JWT を設定する
+3. ローカルで説明文を生成したい場合は Ollama を導入し、`OLLAMA_MODEL=gemma3:4b` などを設定する
+4. OpenAI 互換 API を使う場合は任意で `OPENAI_API_KEY` を設定する
+5. 1つ目のターミナルで `npm run api` を起動する
+6. 2つ目のターミナルで `npm run dev` を起動する
 
-## React Compiler
+フロントエンドは `/api` を `http://localhost:8787` にプロキシします。トークンをブラウザへ露出しないため、推論リクエストはローカルの Node プロキシ経由です。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 補足
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 花カテゴリは Flowering Plants に絞って照合します
+- キノコカテゴリは Fungi に絞って照合します
+- ビルドはフロントエンドのみを対象にしています。推論には別途 `npm run api` が必要です
+- `OLLAMA_MODEL` を設定すると、図鑑メモ生成はローカルの Ollama を優先して使います
+- `OPENAI_API_KEY` を設定しない場合、または LLM 呼び出しが失敗した場合、図鑑メモは既存の定型文テンプレートで保存されます
