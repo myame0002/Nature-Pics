@@ -3,7 +3,6 @@
     padding: 20px;
   }
 
-  .hero-panel,
   .page-hero,
   .home-feature-grid,
   .feature-card-grid,
@@ -12,9 +11,7 @@
   .analysis-header,
   .field-guide-grid,
   .guide-editor-header,
-  .recent-observation,
-  .stats-grid,
-  .stats-card {
+  .recent-observation {
     grid-template-columns: 1fr;
   }
 
@@ -223,11 +220,36 @@
     justify-content: flex-start;
   }
 
-  .hero-actions {
-    flex-direction: column;
-  }
 
   .visual-tile {
     width: 62%;
+  }
+
+  .home-visual {
+    position: fixed;
+    top: -60px;
+    right: 12px;
+    width: 140px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .home-visual-stack {
+    max-width: 140px;
+    min-height: 100px;
+  }
+
+  .visual-tile {
+    width: 65%;
+    border-radius: 16px;
+    border-width: 2px;
+  }
+
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .lead {
+    max-width: 100%;
   }
 }

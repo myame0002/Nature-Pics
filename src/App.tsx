@@ -76,9 +76,6 @@ function App() {
   const approvedCount = fieldGuideEntries.filter(({ approval }) => approval === 'confirmed').length
   const rejectedCount = fieldGuideEntries.filter(({ approval }) => approval === 'rejected').length
   const recentEntry = fieldGuideEntries[0] ?? null
-  const visualSources = [previewUrl, recentEntry?.imageDataUrl, candidates[0]?.referenceImage].filter(
-    (value): value is string => Boolean(value),
-  )
 
   useEffect(() => {
     const currentPreviewUrl = previewUrl
@@ -420,7 +417,6 @@ function App() {
           rejectedCount={rejectedCount}
           fieldGuideEntriesLength={fieldGuideEntries.length}
           recentEntry={recentEntry}
-          visualSources={visualSources}
           onGoAnalysis={() => { setCurrentPage('analysis'); window.scrollTo({ top: 0, behavior: 'instant' }); }}
           onGoGuide={() => { setCurrentPage('guide'); window.scrollTo({ top: 0, behavior: 'instant' }); }}
         />
