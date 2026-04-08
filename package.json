@@ -8,6 +8,7 @@
     "dev": "node scripts/dev.mjs",
     "dev:client": "vite",
     "build": "tsc -b && vite build",
+    "build:ci": "tsc -b && vite build --cssMinify esbuild",
     "deploy": "npm run build && gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -32,6 +33,7 @@
     "vite": "^8.0.4"
   },
   "optionalDependencies": {
-    "@rolldown/binding-linux-x64-gnu": "^1.0.0-rc.13"
+    "@rolldown/binding-linux-x64-gnu": "^1.0.0-rc.13",
+    "lightningcss-linux-x64-gnu": "^1.30.2"
   }
 }
